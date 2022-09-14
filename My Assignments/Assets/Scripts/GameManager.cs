@@ -19,7 +19,15 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        if(Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            Debug.Log("Exiting game in editor.");
+        }
+        else
+        {
+            Application.Quit();
+           
+        }
     }
 
 

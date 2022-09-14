@@ -1,40 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject progressPanel;
-    [SerializeField]
-    private Slider progressBar;
-    [SerializeField]
-    private Text progressText;
+    public GameObject sceneManager;
+    public Slider progressBar;
+    public Text loadingText;
 
-    private void Awake()
+    // Start is called before the first frame update
+    void Awake()
     {
-        progressPanel.SetActive(false);
+        sceneManager.SetActive(false);
     }
 
-
-    public void LoadLevel(string levelName)
+    public void LoadLevel(int levelIndex)
     {
-        progressPanel.SetActive(true);
-        StartCoroutine(LoadLevelAsync(levelName));
+        sceneManager.SetActive(true);
+        StartCoroutine(LoadLevelAsyncronally(levelIndex));
+        MyLogger.Log("LoadLevel() is called");
     }
 
-    IEnumerator LoadLevelAsync(string levelName)
+    IEnumerator LoadLevelAsyncronally(int levelIndex)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
+       
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
         while (!operation.isDone)
         {
-            float normalizedProgress = operation.progress/0.9f;
-            progressBar.value = normalizedProgress;
-            print(normalizedProgress * 100 + "%");
-            progressText.text = (normalizedProgress * 100f).ToString("F0") + "%";
+            float progress = Mathf.Clamp01(operation.progress / 0.9f) * 100;
+            MyLogger.Log(operation.progress + "%");
+            progressBar.value = progress;
+            loadingText.text = progress.ToString("F0") + "%";
             yield return null;
         }
+
     }
 }
