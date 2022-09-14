@@ -18,9 +18,9 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
-        sceneManager.SetActive(true);
+        
         StartCoroutine(LoadLevelAsyncronally(levelIndex));
-        MyLogger.Log("LoadLevel() is called");
+        
     }
 
     IEnumerator LoadLevelAsyncronally(int levelIndex)
@@ -29,10 +29,11 @@ public class LevelManager : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
         while (!operation.isDone)
         {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f) * 100;
-            MyLogger.Log(operation.progress + "%");
+            sceneManager.SetActive(true);
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            //MyLogger.Log(operation.progress + "%");
             progressBar.value = progress;
-            loadingText.text = progress.ToString("F0") + "%";
+            loadingText.text = progress * 100 + "%";
             yield return null;
         }
 

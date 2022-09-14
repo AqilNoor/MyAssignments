@@ -14,6 +14,8 @@ public class HomeScreenUI : MonoBehaviour
     private GameObject homeScreen;
     [SerializeField]
     private GameObject playModeScreen;
+    [SerializeField]
+    private GameObject campaignLevelsScreen;
     private bool isHomeScreenActive;
 
     void Awake()
@@ -47,6 +49,15 @@ public class HomeScreenUI : MonoBehaviour
         }
         playModeScreen.SetActive(false);
         isHomeScreenActive = true;
+    }
+
+    public void OpenCampaignMode()
+    {
+        if (!isHomeScreenActive && homeScreen == false)
+        {
+            campaignLevelsScreen.SetActive(true);
+        }
+
     }
 
     public void UpdateTextValue(Text text, int value, int increment)
