@@ -40,6 +40,7 @@ public class HomeScreenUI : MonoBehaviour
         }
         isHomeScreenActive = false;
         homeScreen.SetActive(false);
+       
     }
     public void BackToHomeScreen()
     {
@@ -49,15 +50,30 @@ public class HomeScreenUI : MonoBehaviour
         }
         playModeScreen.SetActive(false);
         isHomeScreenActive = true;
+       
     }
 
     public void OpenCampaignMode()
     {
-        if (!isHomeScreenActive && homeScreen == false)
+        if (!isHomeScreenActive && playModeScreen == true)
         {
             campaignLevelsScreen.SetActive(true);
         }
-
+        isHomeScreenActive = true;
+        playModeScreen.SetActive(false);
+        homeScreen.SetActive(false);
+    }
+    
+    public void BackToPlayModeScreen()
+    {
+        print("Back to Play Mode");
+        if( campaignLevelsScreen == true)
+        {
+            playModeScreen.SetActive(true);
+        }
+        isHomeScreenActive = false;
+        homeScreen.SetActive(false);
+        campaignLevelsScreen.SetActive(false);
     }
 
     public void UpdateTextValue(Text text, int value, int increment)
