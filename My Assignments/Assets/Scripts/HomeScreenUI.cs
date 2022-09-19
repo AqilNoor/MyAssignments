@@ -17,11 +17,24 @@ public class HomeScreenUI : MonoBehaviour
     [SerializeField]
     private GameObject campaignLevelsScreen;
     private bool isHomeScreenActive;
+    private static bool hasHomeSceneOpenedAlready = false;
 
     void Awake()
     {
         isHomeScreenActive = true;
         animator = GetComponent<Animator>();
+
+        if (!hasHomeSceneOpenedAlready)
+        {
+            homeScreen.SetActive(true);
+            playModeScreen.SetActive(false);
+            hasHomeSceneOpenedAlready = true; 
+        }
+        else
+        {
+            playModeScreen.SetActive(true);
+            homeScreen.SetActive(false);
+        }
     }
 
     

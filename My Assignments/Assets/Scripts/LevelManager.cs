@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
     public GameObject sceneManager;
     public Slider progressBar;
     public Text loadingText;
@@ -13,20 +14,29 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if(instance = null)
+        {
+            instance = this;
+        }
         sceneManager.SetActive(false);
     }
 
     public void LoadLevel(int levelIndex)
     {
+        Debug.Log($"Level Index + {levelIndex}");
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
         
-        StartCoroutine(LoadLevelAsyncronally(levelIndex));
+        StartCoroutine(LoadSceneAsyncronally(sceneIndex));
         
     }
 
-    IEnumerator LoadLevelAsyncronally(int levelIndex)
+    IEnumerator LoadSceneAsyncronally(int sceneIndex)
     {
        
-        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!operation.isDone)
         {
             sceneManager.SetActive(true);
