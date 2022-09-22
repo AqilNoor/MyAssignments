@@ -12,12 +12,12 @@ public class HomeScreenUI : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private GameObject homeScreen;
-    [SerializeField]
-    private GameObject playModeScreen;
+   
+    public GameObject playModeScreen;
     [SerializeField]
     private GameObject campaignLevelsScreen;
     private bool isHomeScreenActive;
-    private static bool hasHomeSceneOpenedAlready = false;
+   public static bool hasHomeSceneOpenedAlready = false;
 
     void Awake()
     {
@@ -45,38 +45,38 @@ public class HomeScreenUI : MonoBehaviour
         UpdateTextValue(scoreText, score, 1);
     }
 
-    public void PlayButtonOnHomeScreen()
+    
+   
+    public void OpenPlayModeScreen()
     {
         if (isHomeScreenActive)
         {
             playModeScreen.SetActive(true);
         }
-        isHomeScreenActive = false;
         homeScreen.SetActive(false);
-       
+
     }
     public void BackToHomeScreen()
     {
-        if (!isHomeScreenActive)
-        {
             homeScreen.SetActive(true);
-        }
         playModeScreen.SetActive(false);
-        isHomeScreenActive = true;
-       
+      
+
     }
 
     public void OpenCampaignMode()
     {
-        if (!isHomeScreenActive && playModeScreen == true)
-        {
+        //if (!isHomeScreenActive && playModeScreen == true)
+        //{
             campaignLevelsScreen.SetActive(true);
-        }
-        isHomeScreenActive = true;
+        //}
+        //isHomeScreenActive = true;
         playModeScreen.SetActive(false);
         homeScreen.SetActive(false);
     }
+
     
+
     public void BackToPlayModeScreen()
     {
         print("Back to Play Mode");

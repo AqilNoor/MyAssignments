@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class CampaignLevelHandler : MonoBehaviour
 {
-  
-   
-   public static int levelsUnlocked = 4;
+   public int levelsUnlocked = 4;
 
     public GameObject[] levelIconParents;
 

@@ -207,8 +207,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -219,7 +219,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 171006578}
   - component: {fileID: 171006580}
   m_Layer: 5
-  m_Name: Campaign Mode Panel
+  m_Name: Campaign Mode Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02d6d84b3ac6b246a2669b9bcf224f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelsUnlocked: 4
   levelIconParents:
   - {fileID: 2113949227}
   - {fileID: 1939669665}
@@ -2162,7 +2163,7 @@ GameObject:
   - component: {fileID: 465410781}
   - component: {fileID: 465410780}
   m_Layer: 5
-  m_Name: Play Mode Selection Panel
+  m_Name: Play Mode Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2340,7 +2341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1110269055}
         m_TargetAssemblyTypeName: HomeScreenUI, Assembly-CSharp
-        m_MethodName: PlayButtonOnHomeScreen
+        m_MethodName: OpenPlayModeScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2971,8 +2972,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2983,7 +2984,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4962,8 +4963,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4974,7 +4975,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5350,8 +5351,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5362,7 +5363,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5420,7 +5421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265298894}
   m_Layer: 5
-  m_Name: MainScene Panel
+  m_Name: Home Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6235,8 +6236,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6247,7 +6248,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6545,8 +6546,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6557,7 +6558,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6945,8 +6946,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6957,7 +6958,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7743,8 +7744,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7755,7 +7756,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8043,8 +8044,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8055,7 +8056,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8187,8 +8188,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8199,7 +8200,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2066085621}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: SetCurrentLevelNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8416,7 +8417,7 @@ GameObject:
   - component: {fileID: 2047882035}
   - component: {fileID: 2047882034}
   m_Layer: 5
-  m_Name: LoadingScenePanel
+  m_Name: LoadingSceneBar Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

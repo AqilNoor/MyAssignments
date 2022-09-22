@@ -6,36 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
     public GameObject sceneManager;
     public Slider progressBar;
     public Text loadingText;
+    public static int currentLevelNumber;
+    public const int GAME_PLAY_SCENE_INDEX = 1;
 
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance = null)
-        {
-            instance = this;
-        }
         sceneManager.SetActive(false);
     }
 
-    public void LoadLevel(int levelIndex)
+    public void SetCurrentLevelNumber(int levelNumber)
     {
-        Debug.Log($"Level Index + {levelIndex}");
+        currentLevelNumber = levelNumber;
     }
 
-    public void LoadScene(int sceneIndex)
+    public void LoadSceneAsync()
     {
-        
-        StartCoroutine(LoadSceneAsyncronally(sceneIndex));
-        
+        StartCoroutine(LoadSceneCoroutine(GAME_PLAY_SCENE_INDEX));
     }
 
-    IEnumerator LoadSceneAsyncronally(int sceneIndex)
+    IEnumerator LoadSceneCoroutine(int sceneIndex)
     {
-       
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!operation.isDone)
         {
@@ -43,7 +37,7 @@ public class LevelManager : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             //MyLogger.Log(operation.progress + "%");
             progressBar.value = progress;
-            loadingText.text = progress * 100 + "%";
+            loadingText.text =( progress * 100).ToString("F0") + "%";
             yield return null;
         }
 
