@@ -24,7 +24,7 @@ public class HomeScreenUI : MonoBehaviour
         isHomeScreenActive = true;
         animator = GetComponent<Animator>();
 
-        if (!hasHomeSceneOpenedAlready)
+       /* if (!hasHomeSceneOpenedAlready)
         {
             homeScreen.SetActive(true);
             playModeScreen.SetActive(false);
@@ -34,7 +34,7 @@ public class HomeScreenUI : MonoBehaviour
         {
             playModeScreen.SetActive(true);
             homeScreen.SetActive(false);
-        }
+        }*/
     }
 
     
@@ -58,19 +58,22 @@ public class HomeScreenUI : MonoBehaviour
     }
     public void BackToHomeScreen()
     {
+        if(playModeScreen == true) {
             homeScreen.SetActive(true);
-        playModeScreen.SetActive(false);
+            playModeScreen.SetActive(false);
+        }
+            
       
 
     }
 
     public void OpenCampaignMode()
     {
-        //if (!isHomeScreenActive && playModeScreen == true)
-        //{
+        if ( playModeScreen == true)
+        {
             campaignLevelsScreen.SetActive(true);
-        //}
-        //isHomeScreenActive = true;
+        }
+      
         playModeScreen.SetActive(false);
         homeScreen.SetActive(false);
     }
@@ -84,7 +87,6 @@ public class HomeScreenUI : MonoBehaviour
         {
             playModeScreen.SetActive(true);
         }
-        isHomeScreenActive = false;
         homeScreen.SetActive(false);
         campaignLevelsScreen.SetActive(false);
     }
